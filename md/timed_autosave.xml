@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mdscript name="HS_TimedAutosave" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../x4-catalog/md/md.xsd">
+    <cues>
+        <cue name="HS_TimedAutosave" instantiate="true" checkinterval="15min" checktime="player.age + 15min" namespace="default">
+            <actions>
+                <do_if value="player.autosave.available">
+                    <!-- Success: Perform autosave -->
+                    <trigger_autosave />
+                    <reset_cue cue="HS_TimedAutosave" />
+                </do_if>
+            </actions>
+        </cue>
+    </cues>
+</mdscript>
